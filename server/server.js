@@ -21,7 +21,6 @@ app.get('/api/:start/:end', (req, res) => {
     for (var key in data.bpi) {
       dataPoints.push(data.bpi[key])
     }
-    console.log(dataPoints)
     res.send({
       labels: labels,
       datasets:[{
