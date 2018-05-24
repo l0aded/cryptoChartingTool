@@ -22,7 +22,6 @@ class Chart extends React.Component<Props> {
   _submitData () {
     axios.get(`/api/${this.state.start}/${this.state.end}`)
     .then(({data}) => {
-      console.log(data);
       this.setState({
         data: data
       })
@@ -34,9 +33,6 @@ class Chart extends React.Component<Props> {
 
   _handleChange(e) {
     this.setState({[e.target.name]: e.target.value});
-    console.log('coin', this.state.coin)
-    console.log('start', this.state.start)
-    console.log('end', this.state.end)
   }
 
 
