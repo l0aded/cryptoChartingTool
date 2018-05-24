@@ -2,8 +2,9 @@
   "name": "cryptoChartingTool",
   "scripts": {
     "start": "node server/server.js",
-    "start-dev": "nodemon server/server.js",
+    "start:dev": "nodemon server/server.js",
     "build": "webpack -p --config webpack.config.js --progress --profile --colors",
+    "build:dev": "webpack -d --watch --config webpack.config.js --progress --profile --colors",
     "dev": "./node_modules/.bin/webpack-dev-server -d --host 0.0.0.0 --config webpack.config.js --content-base src/ --colors --hot --progress --inline --watch"
   },
   "dependencies": {
@@ -17,6 +18,7 @@
     "path": "^0.12.7",
     "react": "^15.6.2",
     "react-chartjs": "^1.2.0",
+    "react-chartjs-2": "^1.1.5",
     "react-dom": "^15.6.2"
   },
   "devDependencies": {

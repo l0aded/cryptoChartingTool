@@ -38,6 +38,7 @@ class App extends React.Component<Props> {
 			<div className="main">
 				<h1>Bitcoin (BTC)</h1>
 				<h3>REAL-TIME PRICE: {this.state.btcPrice}</h3>
+				<h5>GET HISTORICAL CHART FOR BITCOIN</h5>
 				<Chart />
 			</div>
 		)
