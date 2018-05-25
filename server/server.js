@@ -17,10 +17,7 @@ app.get('/api/:start/:end', (req, res) => {
   axios.get(`https://api.coindesk.com/v1/bpi/historical/close.json?start=${start}&end=${end}`)
   .then(({data}) => {
     const labels = Object.keys(data.bpi)
-    const dataPoints = [];
-    for (var key in data.bpi) {
-      dataPoints.push(data.bpi[key])
-    }
+    const dataPoints = Object.values(data.bpi)
     res.send({
       labels: labels,
       datasets:[{

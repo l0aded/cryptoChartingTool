@@ -17,8 +17,6 @@ class Chart extends React.Component<Props> {
     this._handleChange = this._handleChange.bind(this);
   }
 
-
-
   _submitData () {
     axios.get(`/api/${this.state.start}/${this.state.end}`)
     .then(({data}) => {
@@ -37,22 +35,23 @@ class Chart extends React.Component<Props> {
 
 
   render() {
+		const { data } = this.state
     const chartOptions = {
       title: {
         display: true,
         text: 'BITCOIN PRICES'
       }
     }
+
     return (
       <div>
-        {/* <div><label><input type="text" name="coin" placeholder="Coin" value={this.state.coin}  onChange={this._handleChange} /></label></div> */}
         <div><label><input type="text" name="start" placeholder="Start Date" value={this.state.start}  onChange={this._handleChange} /></label></div>
         <div><label><input type="text" name="end" placeholder="End Date" value={this.state.end}  onChange={this._handleChange} /></label></div>
         <div>
           <button onClick={() => this._submitData()}> SUBMIT </button>
         </div>
         <LineChart
-          data={this.state.data}
+          data={data}
           options={chartOptions}
           width="1000" height="500"
           redraw

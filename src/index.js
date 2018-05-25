@@ -9,8 +9,6 @@ require('./css/index.css');
 
 type Props = {||};
 
-// https://api.coindesk.com/v1/bpi/currentprice.json
-
 class App extends React.Component<Props> {
 	constructor(props) {
 		super(props);
